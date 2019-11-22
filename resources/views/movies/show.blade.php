@@ -25,6 +25,7 @@
                                    <th>Title</th>
                                    <th>Body</th>
                                    <th>Actions</th>
+                                   <th>Created by:</th>
                                  </thead>
                                 <tbody>
                                   @foreach ($reviews as $review)

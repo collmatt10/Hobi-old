@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Movie;
 use App\Review;
+use App\User;
 use Auth;
 
 class ReviewController extends Controller
@@ -17,7 +18,7 @@ class ReviewController extends Controller
   public function __construct()
   {
       $this->middleware('auth');
-        $this->middleware('role:critic');
+      $this->middleware('role:critic');
   }
     /**
      * Display a listing of the resource.
@@ -35,7 +36,7 @@ class ReviewController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create($id)
-    {#
+    {
         $movie = Movie::findOrFail($id);
 
         return view('critic.reviews.create')->with([
@@ -57,6 +58,7 @@ class ReviewController extends Controller
         $review->movie_id = $id;
         $review->user_id = Auth::id(); //takes authorised loggied in users id
 
+
         $review->save();
 
         return redirect()->route('user.movies.show', $id);
@@ -69,7 +71,7 @@ class ReviewController extends Controller
      */
     public function show($id)
     {
-        //
+      //
     }
 
     /**

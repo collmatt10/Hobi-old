@@ -27,6 +27,11 @@ class MovieController extends Controller
         $movies = Movie::all();
         return view('movies.index')->with([
           'movies' =>$movies
+
+          $users = User::all();
+           return view('users.movies.index')->with([
+            'users' => $users
+                 ]);
         ]);
     }
 

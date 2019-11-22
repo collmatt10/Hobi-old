@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    You are logged in as an admin! <a href="{{route('admin.movies.index')}}">Movies</a>
+                    You are logged in as an admin!
+                  </br>
+                  Please select what media you would like to manage
+                </br>
+                <a href="{{route('admin.movies.index')}}">Movies</a>
                 </div>
             </div>
         </div>

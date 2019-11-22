@@ -47,7 +47,7 @@ Route::put('/admin/movies/{id}/update','Admin\MovieController@update')->name('ad
 Route::delete('/admin/movies/{id}','Admin\MovieController@destroy')->name('admin.movies.destroy');
 
 Route::delete('/admin/movies/{id}/reviews/{rid}','Admin\ReviewController@destroy')->name('admin.reviews.destroy');
-Route::get('/critic/books/{id}/reviews/create','Critic\ReviewController@create')->name('critic.reviews.create');
+Route::get('/critic/movies/{id}/reviews/create','Critic\ReviewController@create')->name('critic.reviews.create');
 Route::post('/critic/movies/{id}/reviews/create','Critic\ReviewController@store')->name('critic.reviews.store');
 
 Auth::routes(['verify'=> true]);

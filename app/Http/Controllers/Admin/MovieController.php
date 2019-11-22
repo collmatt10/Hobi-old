@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Movie;
 use App\User;
+use Auth;
 
 class MovieController extends Controller
 {
@@ -63,7 +64,7 @@ class MovieController extends Controller
          //First Validate the form data
          $request->validate($rules,$messages);
          //Create a movie = new
-          $movie = new Movie;
+         $movie = new Movie;
          $movie->title = $request->title;
          $movie->director = $request->director;
          $movie->company = $request->company;
@@ -92,7 +93,7 @@ class MovieController extends Controller
 
 
        $reviews = $movie->reviews()->get();
-       return view('movies.show')->with([
+       return view('admin.movies.show')->with([
          'movie' =>$movie,
          'reviews' =>$reviews
          ]);

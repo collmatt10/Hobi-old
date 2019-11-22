@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Review;
 use App\Movie;
+use App\User;
 use Auth;
 class ReviewController extends Controller
 {
