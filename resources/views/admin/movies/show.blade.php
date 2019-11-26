@@ -1,3 +1,5 @@
+
+
 @extends('layouts.app')
 
 @section('content')
@@ -68,13 +70,15 @@
                                      <thead>
                                        <th>Title</th>
                                        <th>Body</th>
-                                       <th>Actions</th>
+                                      {{--  <th>Created By:</th>--}}
+                                        <th>Actions</th>
                                      </thead>
                                     <tbody>
                                       @foreach ($reviews as $review)
                                       <tr>
                                          <th>{{ $review->title}}</th>
                                            <th>{{ $review->body}}</th>
+                                          {{-- <th>{{ $review->user->name}}</th>--}}
                                            <th>
                                                <form style= "display:inline-block" method="POST" action="{{ route('admin.reviews.destroy', [ 'id' => $movie->id, 'rid' => $review->id ])   }}">
                                                  <input type="hidden" name="_method" value="DELETE">
